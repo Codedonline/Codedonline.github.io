@@ -1,80 +1,49 @@
 /* styles.css */
 body {
   font-family: Arial, sans-serif;
+  text-align: center;
   margin: 0;
   padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #0d1117; /* Dark mode background */
-  color: #c9d1d9; /* Off-white text */
+  background-color: #f3f3f3;
 }
 
-.container {
-  display: flex;
+#camera-section {
+  position: relative;
+  display: inline-block;
+}
+
+#camera {
   width: 100%;
-  height: 100vh;
+  max-width: 600px;
+  border: 2px solid #000;
 }
 
-.editor-section {
-  width: 50%; /* Make the editor section take up half the page */
-  display: flex;
-  flex-direction: column;
-  border-right: 1px solid #30363d; /* Add a subtle divider */
+#canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Stops interaction */
 }
 
-.tabs {
-  display: flex;
-  background-color: #21262d;
+#chessboard {
+  display: grid;
+  grid-template-columns: repeat(8, 50px);
+  grid-template-rows: repeat(8, 50px);
+  justify-content: center;
+  margin: 20px auto;
 }
 
-.tab {
-  flex: 1;
-  padding: 10px;
-  cursor: pointer;
-  text-align: center;
-  background-color: #30363d;
-  color: #c9d1d9;
-  border: none;
+#chessboard div {
+  width: 50px;
+  height: 50px;
 }
 
-.tab.active, .tab:hover {
-  background-color: #3b4048;
+#chessboard div:nth-child(even) {
+  background-color: #b58863;
 }
 
-.code-area {
-  display: none;
-  flex: 1;
-  font-family: monospace;
-  font-size: 14px;
-  padding: 10px;
-  border: none;
-  color: #c9d1d9;
-  background-color: #0d1117;
-  resize: none;
-}
-
-.code-area.active {
-  display: block;
-}
-
-#runButton {
-  padding: 10px;
-  background-color: #238636;
-  color: white;
-  border: none;
-  cursor: pointer;
-  font-size: 14px;
-  margin-top: 10px;
-}
-
-#runButton:hover {
-  background-color: #2ea043;
-}
-
-#iframe {
-  width: 50%; /* Make the output section take up the other half */
-  border: none;
-  background-color: #161b22;
+#chessboard div:nth-child(odd) {
+  background-color: #f0d9b5;
 }
