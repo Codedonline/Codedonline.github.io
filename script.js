@@ -1,35 +1,35 @@
-// script.js
-const tabs = document.querySelectorAll('.tab');
-const codeAreas = document.querySelectorAll('.code-area');
-const runButton = document.getElementById('runButton');
-const outputFrame = document.getElementById('outputFrame');
+// Chessboard state: A 2D array to represent the chessboard
+let boardState = [
+  ['R', 'N', 'B', 'Q', 'K', 'B', 'N', 'R'], // Row 1 (Black pieces)
+  ['P', 'P', 'P', 'P', 'P', 'P', 'P', 'P'], // Row 2 (Pawns)
+  [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], // Row 3 (Empty)
+  [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], // Row 4 (Empty)
+  [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], // Row 5 (Empty)
+  [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], // Row 6 (Empty)
+  ['P', 'P', 'P', 'P', 'P', 'P', 'P', 'P'], // Row 7 (White pawns)
+  ['R', 'N', 'B', 'Q', 'K', 'B', 'N', 'R'], // Row 8 (White pieces)
+];
 
-// Updated JavaScript for tab switching
-tabs.forEach(tab => {
-  tab.addEventListener('click', () => {
-    // Clear active state on all tabs and code areas
-    tabs.forEach(t => t.classList.remove('active'));
-    codeAreas.forEach(area => area.classList.remove('active'));
+// Keep track of the last state
+let previousState = JSON.parse(JSON.stringify(boardState));
 
-    // Activate the clicked tab and its associated code area
-    tab.classList.add('active');
-    const targetArea = tab.dataset.target; // Use data-target to match
-    document.getElementById(targetArea).classList.add('active');
-  });
-});
+// Function to simulate a move
+function simulateMove(from, to) {
+  // Extract positions (e.g., "E2" -> row: 6, col: 4)
+  const fromRow = 8 - parseInt(from[1]);
+  const fromCol = from.charCodeAt(0) - 'A'.charCodeAt(0);
 
+  const toRow = 8 - parseInt(to[1]);
+  const toCol = to.charCodeAt(0) - 'A'.charCodeAt(0);
 
-// Handle "Run Code" button
-runButton.addEventListener('click', () => {
-  const html = document.getElementById('htmlTab').value;
-  const css = `<style>${document.getElementById('cssTab').value}</style>`;
-  const js = `<script>${document.getElementById('jsTab').value}<\/script>`;
+  // Perform the move
+  boardState[toRow][toCol] = boardState[fromRow][fromCol];
+  boardState[fromRow][fromCol] = ' ';
 
-  const json = document.getElementById('jsonTab').value;
-  const parsedJson = json ? `<pre>${JSON.stringify(JSON.parse(json), null, 2)}</pre>` : '';
+  // Log the move
+  console.log(`${from},${to}`);
+}
 
-  const output = `${html}${css}${parsedJson}${js}`;
-  outputFrame.contentWindow.document.open();
-  outputFrame.contentWindow.document.write(output);
-  outputFrame.contentWindow.document.close();
-});
+// Example moves
+simulateMove("E2", "E4"); // Move white pawn
+simulateMove("G8", "F6"); // Move black knight
