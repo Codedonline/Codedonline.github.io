@@ -3,25 +3,59 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-}
-
-.editor-container {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   height: 100vh;
 }
 
-#codeEditor {
+.container {
+  display: flex;
+  width: 90%;
+  height: 90%;
+  border: 1px solid #ccc;
+}
+
+.editor-section {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.tabs {
+  display: flex;
+  background-color: #f1f1f1;
+}
+
+.tab {
   flex: 1;
   padding: 10px;
+  cursor: pointer;
+  text-align: center;
+  border: none;
+  background-color: #ddd;
+}
+
+.tab.active, .tab:hover {
+  background-color: #bbb;
+}
+
+.code-area {
+  display: none;
+  flex: 1;
+  font-family: monospace;
   font-size: 14px;
+  padding: 10px;
   border: 1px solid #ccc;
   resize: none;
 }
 
+.code-area.active {
+  display: block;
+}
+
 #runButton {
   padding: 10px;
-  font-size: 14px;
   background-color: #007BFF;
   color: white;
   border: none;
@@ -33,6 +67,6 @@ body {
 }
 
 #iframe {
-  flex: 1;
+  width: 50%;
   border: none;
 }
