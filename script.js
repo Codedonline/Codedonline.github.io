@@ -4,16 +4,20 @@ const codeAreas = document.querySelectorAll('.code-area');
 const runButton = document.getElementById('runButton');
 const outputFrame = document.getElementById('outputFrame');
 
-// Handle tab switching
+// Updated JavaScript for tab switching
 tabs.forEach(tab => {
   tab.addEventListener('click', () => {
+    // Clear active state on all tabs and code areas
     tabs.forEach(t => t.classList.remove('active'));
     codeAreas.forEach(area => area.classList.remove('active'));
 
+    // Activate the clicked tab and its associated code area
     tab.classList.add('active');
-    document.getElementById(tab.dataset.target).classList.add('active');
+    const targetArea = tab.dataset.target; // Use data-target to match
+    document.getElementById(targetArea).classList.add('active');
   });
 });
+
 
 // Handle "Run Code" button
 runButton.addEventListener('click', () => {
