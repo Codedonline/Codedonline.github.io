@@ -1,4 +1,4 @@
-/* Updated Dark Theme */
+/* styles.css */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -7,16 +7,21 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #0d1117; /* True dark blue-black */
-  color: #c9d1d9; /* Softer off-white */
+  background-color: #0d1117; /* Dark mode background */
+  color: #c9d1d9; /* Off-white text */
 }
 
 .container {
   display: flex;
-  width: 90%;
-  height: 90%;
-  border: 1px solid #30363d; /* Slightly lighter border */
-  background-color: #161b22; /* Editor container background */
+  width: 100%;
+  height: 100vh;
+}
+
+.editor-section {
+  width: 50%; /* Make the editor section take up half the page */
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #30363d; /* Add a subtle divider */
 }
 
 .tabs {
@@ -35,7 +40,7 @@ body {
 }
 
 .tab.active, .tab:hover {
-  background-color: #3b4048; /* Highlighted tab color */
+  background-color: #3b4048;
 }
 
 .code-area {
@@ -44,7 +49,7 @@ body {
   font-family: monospace;
   font-size: 14px;
   padding: 10px;
-  border: 1px solid #30363d;
+  border: none;
   color: #c9d1d9;
   background-color: #0d1117;
   resize: none;
@@ -56,19 +61,20 @@ body {
 
 #runButton {
   padding: 10px;
-  background-color: #238636; /* Vibrant green button */
+  background-color: #238636;
   color: white;
   border: none;
   cursor: pointer;
   font-size: 14px;
+  margin-top: 10px;
 }
 
 #runButton:hover {
-  background-color: #2ea043; /* Hover color */
+  background-color: #2ea043;
 }
 
 #iframe {
-  width: 50%;
+  width: 50%; /* Make the output section take up the other half */
   border: none;
   background-color: #161b22;
 }
