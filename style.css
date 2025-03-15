@@ -8,7 +8,7 @@ body {
   align-items: center;
   height: 100vh;
   background-color: #101524; /* Dark mode background */
-  color: #c9d1d9; /* Off-white text */
+  color: #f3ddcb; /* Off-white text */
 }
 
 .container {
@@ -21,12 +21,12 @@ body {
   width: 50%; /* Make the editor section take up half the page */
   display: flex;
   flex-direction: column;
-  border-right: 1px solid #30363d; /* Add a subtle divider */
+  border-right: 1px solid #f3ddcb; /* Add a subtle divider */
 }
 
 .tabs {
   display: flex;
-  background-color: #21262d;
+  background-color: #101524;
 }
 
 .tab {
@@ -50,7 +50,7 @@ body {
   font-size: 14px;
   padding: 10px;
   border: none;
-  color: #c9d1d9;
+  color: #f3ddcb;
   background-color: #0d1117;
   resize: none;
 }
