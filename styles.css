@@ -1,4 +1,4 @@
-/* styles.css */
+/* Updated Dark Theme */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -7,27 +7,21 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #1e1e2f; /* Dark blueish-black background */
-  color: #d4d4d4; /* Off-white text */
+  background-color: #0d1117; /* True dark blue-black */
+  color: #c9d1d9; /* Softer off-white */
 }
 
 .container {
   display: flex;
   width: 90%;
   height: 90%;
-  border: 1px solid #444;
-  background-color: #252539; /* Slightly lighter dark background for container */
-}
-
-.editor-section {
-  width: 50%;
-  display: flex;
-  flex-direction: column;
+  border: 1px solid #30363d; /* Slightly lighter border */
+  background-color: #161b22; /* Editor container background */
 }
 
 .tabs {
   display: flex;
-  background-color: #2c2c3c;
+  background-color: #21262d;
 }
 
 .tab {
@@ -35,13 +29,13 @@ body {
   padding: 10px;
   cursor: pointer;
   text-align: center;
+  background-color: #30363d;
+  color: #c9d1d9;
   border: none;
-  background-color: #3a3a4a; /* Darker tab background */
-  color: #d4d4d4;
 }
 
 .tab.active, .tab:hover {
-  background-color: #57576b; /* Highlighted tab */
+  background-color: #3b4048; /* Highlighted tab color */
 }
 
 .code-area {
@@ -50,9 +44,9 @@ body {
   font-family: monospace;
   font-size: 14px;
   padding: 10px;
-  border: 1px solid #444;
-  color: #d4d4d4; /* Off-white text */
-  background-color: #1e1e2f; /* Editor background */
+  border: 1px solid #30363d;
+  color: #c9d1d9;
+  background-color: #0d1117;
   resize: none;
 }
 
@@ -62,7 +56,7 @@ body {
 
 #runButton {
   padding: 10px;
-  background-color: #007BFF;
+  background-color: #238636; /* Vibrant green button */
   color: white;
   border: none;
   cursor: pointer;
@@ -70,12 +64,11 @@ body {
 }
 
 #runButton:hover {
-  background-color: #0056b3;
+  background-color: #2ea043; /* Hover color */
 }
 
 #iframe {
   width: 50%;
   border: none;
-  background-color: #252539; /* Output background */
-  color: #d4d4d4;
+  background-color: #161b22;
 }
