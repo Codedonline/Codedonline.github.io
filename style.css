@@ -1,0 +1,38 @@
+/* styles.css */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.editor-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+#codeEditor {
+  flex: 1;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  resize: none;
+}
+
+#runButton {
+  padding: 10px;
+  font-size: 14px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#runButton:hover {
+  background-color: #0056b3;
+}
+
+#iframe {
+  flex: 1;
+  border: none;
+}
