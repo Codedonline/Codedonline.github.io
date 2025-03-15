@@ -3,13 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Custom Code Editor</title>
+  <title>Tabbed Code Editor</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="editor-container">
-    <textarea id="codeEditor" placeholder="Write your HTML code here..."></textarea>
-    <button id="runButton">Run Code</button>
+  <div class="container">
+    <div class="editor-section">
+      <div class="tabs">
+        <button class="tab" data-target="htmlTab">HTML</button>
+        <button class="tab" data-target="cssTab">CSS</button>
+        <button class="tab" data-target="jsTab">JS</button>
+        <button class="tab" data-target="jsonTab">JSON</button>
+      </div>
+      <textarea id="htmlTab" class="code-area active" placeholder="Write HTML here..."></textarea>
+      <textarea id="cssTab" class="code-area" placeholder="Write CSS here..."></textarea>
+      <textarea id="jsTab" class="code-area" placeholder="Write JavaScript here..."></textarea>
+      <textarea id="jsonTab" class="code-area" placeholder="Write JSON here..."></textarea>
+      <button id="runButton">Run Code</button>
+    </div>
     <iframe id="outputFrame"></iframe>
   </div>
   <script src="script.js"></script>
