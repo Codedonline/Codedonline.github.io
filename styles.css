@@ -7,13 +7,16 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  background-color: #1e1e2f; /* Dark blueish-black background */
+  color: #d4d4d4; /* Off-white text */
 }
 
 .container {
   display: flex;
   width: 90%;
   height: 90%;
-  border: 1px solid #ccc;
+  border: 1px solid #444;
+  background-color: #252539; /* Slightly lighter dark background for container */
 }
 
 .editor-section {
@@ -24,7 +27,7 @@ body {
 
 .tabs {
   display: flex;
-  background-color: #f1f1f1;
+  background-color: #2c2c3c;
 }
 
 .tab {
@@ -33,11 +36,12 @@ body {
   cursor: pointer;
   text-align: center;
   border: none;
-  background-color: #ddd;
+  background-color: #3a3a4a; /* Darker tab background */
+  color: #d4d4d4;
 }
 
 .tab.active, .tab:hover {
-  background-color: #bbb;
+  background-color: #57576b; /* Highlighted tab */
 }
 
 .code-area {
@@ -46,7 +50,9 @@ body {
   font-family: monospace;
   font-size: 14px;
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #444;
+  color: #d4d4d4; /* Off-white text */
+  background-color: #1e1e2f; /* Editor background */
   resize: none;
 }
 
@@ -60,6 +66,7 @@ body {
   color: white;
   border: none;
   cursor: pointer;
+  font-size: 14px;
 }
 
 #runButton:hover {
@@ -69,4 +76,6 @@ body {
 #iframe {
   width: 50%;
   border: none;
+  background-color: #252539; /* Output background */
+  color: #d4d4d4;
 }
