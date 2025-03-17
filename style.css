@@ -3,9 +3,10 @@ body
 background-color: #101524;
 }
 
-p {
-  border-top-style: dotted;
-  border-right-style: solid;
-  border-bottom-style: dotted;
-  border-left-style: solid;
+div {
+  width: 300px;
+  border: 15px solid green;
+  padding: 50px;
+  margin: 20px;
+  border-style: dotted;
 }
